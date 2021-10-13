@@ -1,0 +1,52 @@
+#!/bin/bash
+echo "Hello world"
+date
+cal
+df
+
+pwd
+
+cd ..
+
+echo "To sort list according to size"
+
+ls -S
+
+echo "To sort the list according time"
+
+ls -t
+pwd
+ls
+file Task1
+
+
+echo $(whoami)
+echo "what is your name"
+read name
+if [ $name ]; then
+        echo "$name sounds alright to me "
+else
+        echo "doesn't sound like anything to me!!"
+fi
+
+mkdir NewFolder
+cd NewFolder
+touch sample1.txt sample2.txt
+cat sample1.txt sample2.txt > sample3.txt
+
+ls -al
+less sample3.txt
+
+
+
+rm -rf NewFolder
+
+
+
+
+
+
+
+
+
+
