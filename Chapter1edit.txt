@@ -40,6 +40,53 @@ less sample3.txt
 
 
 rm -rf NewFolder
+# use bracket expansions to create multiple directories or files
+
+touch {fruits , cats , dogs}
+# this can also be used to create many files wikthout neccesarily touching singles files
+cd fruits
+touch file_{01..1000}
+
+#to echo out specific values ina sequence we use the .. character
+
+echo {1..10..2}
+#this echo outs the numbers one to 10 with the difference of 2 between each values
+#this can also be used in letters but it is case sensitive 
+echo {A..Z}
+
+#to remove all the files in this directory we use rm *
+
+rm *
+
+touch {apple , banana, mango}_{1..1000}
+#piping takes the results of one command and sends it to another command
+
+ls | more
+#in this we list out the fies in the fruits directory adn then count the words 
+
+ls -1|wc-l
+#this command makes the otherfolder directory outside the current working directory
+
+#ERROR HANDLING
+
+mkdir ../otherfolder
+#this command gives permission to read some of the files but will cause errors later on. This command blocks permission to read the 015 extension files 
+chmod 000 *_015*
+#the *v in the copy commadn is used to mean verbose in that it shows how each file is coppied individualy
+
+cp -v *../otherfolder
+
+rm ../otherfolder*
+
+# 1 and 2 represent standard output and standard error respectively and the > sign
+#represents redirecting the output of this command somewhere else and are one level up
+#this is handy when you want to capture the output of commands that you are running
+cp -v * ../otherfolder 1>../success.txt 2>../error.txt
+
+#to chck the files we use the cat command
+
+cat ../succcess.txt
+cat ../error.txt
 
 
 
