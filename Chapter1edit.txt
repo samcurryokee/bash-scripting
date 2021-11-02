@@ -88,6 +88,38 @@ cp -v * ../otherfolder 1>../success.txt 2>../error.txt
 cat ../succcess.txt
 cat ../error.txt
 
+#Hard and soft links
+#soft links also known as symbolic links are shortcuts code is ln -s TargetFile srcfile
+ln -s error_shortcut
+ls -li error.txt error_shortcut
+
+#hard links ln TargetFile srcFile
+
+ln Hardlink1 error.txt
+
+#Permissions
+#To change the permissions of any files or directories we use the chmod(change mode) command
+#one way is by use of numeric values to rep permission type
+
+chmod 664 error.txt
+
+#the other way to change permission of a specific user is symbolic method
+#here we use signs + adds a permission to a directory or file - removes the permission = sets the permission and overides the permission set earlier
+
+#to change the permission of the user use u, to change tose of the group use g, and to change those of the world use o and to change permssions for all use a
+
+chmod u+rwx error.txt
+chmod u=rwx, go=r
+ #Changing ownership and group
+ sudo chown root error.txt
+
+ #changing group ownership
+
+ newgrp cdrom 
+ chgrp cdrom error.txt
+
+
+
 
 
 
