@@ -1,0 +1,49 @@
+#!/bin/bash
+
+#process status i.e ps utility
+
+ps ux
+
+#to check the process status uses ps PID and PID is checked is pidof (process name)
+#kill utility uses kill PID
+
+#ping is used to analyse the network ,hardwarea and even software issues
+#ping <ip-address or hostname>
+
+ hostname -I
+
+ping www.google.com
+
+# tracepath command in Linux is used to traces path to destination discovering MTU along this path. It uses UDP port or some random port
+
+tracepath google.com
+tracepath -m 10  www.google.com
+
+#netstat command displays various network related information such as network connections, routing tables, interface statistics, masquerade connections, multicast memberships etc.,
+
+netstat
+ss
+#ss and netstat do the same job
+netstat -a
+#nestat -r and ip route also do the same job but netstat is absolete hence ip route is used
+netstat -r
+ip route
+
+#netstat -ie is used to examine network interfaces in our system
+netstat ie
+
+#wget command is used to download files from the server even when the user has not logged on to the system and it can work in the background without hindering the current process.
+
+#to operat in the background we used the option -b
+
+wget -b http://example.com/sample.php
+
+#secure shell (ssh)
+
+
+
+
+
+
+
+
