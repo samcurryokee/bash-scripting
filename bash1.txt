@@ -38,12 +38,43 @@ netstat ie
 
 wget -b http://example.com/sample.php
 
-#secure shell (ssh)
+#searching for files by name
 
+find . name "*.txt"
+locate .txt
+#searching for files by type
 
+find . -type f -name "*.txt"
 
+#searching for directories
 
+find . -type d -name "*.txt"
 
+#searching for files via time frame
 
+find . -mtime -2
+
+touch exam.txt
+
+find . -name "*.txt" -delete
+
+#the xargs command is used as follows
+#command1 | xargs command2
+
+printf "1\n2\n3\n" | xargs touch
+#the aboove comand is the same as
+#touch {1,2,3}
+
+print "1\n2\n3\n" | xargs -i touch {}.txt
+
+seq 1000 |xargs -I {} touch {}.txt
+
+#in the chance that you want to change the file extension then 
+
+ ls | cut -d. -f1 | xargs -I {} mv {}.txt {}.text
+#for a faster way to delete files use the xargs command instead of the exec command in find to do this process
+#this is slower>>find foo -type f -name "*.text" -exec rm {} \; 
+
+find -type f -name "*.text"| xargs rm
 
 
