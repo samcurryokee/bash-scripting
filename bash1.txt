@@ -77,4 +77,16 @@ seq 1000 |xargs -I {} touch {}.txt
 
 find -type f -name "*.text"| xargs rm
 
+#zipping and unzipping files in the terminal
+touch foo.txt
+gzip foo.txt
+#to test the integrity of the compressed file we use -t option
+
+gzip -tv foo.txt
+
+gunzip foo.txt
+rm foo.txt
+# archiving files using tar(tape archive) and zip
+
+
 
