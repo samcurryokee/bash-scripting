@@ -85,8 +85,47 @@ gzip foo.txt
 gzip -tv foo.txt
 
 gunzip foo.txt
-rm foo.txt
+
+# to zip multiple files we use the zip command
+touch text1.txt
+zip archive.zip foo.txt text1.txt
+
+#to unzip we just use the unzip file
+unzip archive.zip
+
+
 # archiving files using tar(tape archive) and zip
+#to combine multiple files to a single file
+
+touch file1
+touch file2
+tar -cf tarfile.tar file1 file2
+# to extract the files 
+tar -xf tarfile.tar
+
+#synchronising files and directories 
+
+mkdir dir1 dir2
+cd dir1
+touch file{1..100}
+cd ..
+#to synch both the files and directories we use the -r flag
+#it is used as rsync <source> <desination>
+
+rsync -r dir1/* dir2/
+
+#best one to use is 
+
+rsync -avzh dir1/* dir2/
+
+#Regular Expressions
+
+#global regular expression print (grep)
+#n essence, grep searches text files for the occurrence of a specified regular expression and outputs any line containing a match to standard output.
+
+
+
+
 
 
 
